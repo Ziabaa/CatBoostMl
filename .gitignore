@@ -1,0 +1,8 @@
+**/__pycache__/
+temp
+.venv
+.env
+.idea
+*temp*
+*_dataset*
+*_data*
