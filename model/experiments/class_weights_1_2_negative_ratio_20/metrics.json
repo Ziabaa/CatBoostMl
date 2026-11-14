@@ -1,0 +1,60 @@
+{
+  "experiment_name": "class_weights_1_2_negative_ratio_20",
+  "config": {
+    "experiment_name": "class_weights_1_2_negative_ratio_20",
+    "auto_class_weights": null,
+    "class_weights": [
+      1,
+      2
+    ],
+    "negative_ratio": 20,
+    "iterations": 3000,
+    "depth": 6,
+    "learning_rate": 0.03,
+    "l2_leaf_reg": 3,
+    "early_stopping_rounds": 200,
+    "random_seed": 42,
+    "validation_size": 0.2,
+    "thresholds": [
+      0.01,
+      0.02,
+      0.03,
+      0.05,
+      0.1,
+      0.15,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9
+    ],
+    "threshold_metric": "f1",
+    "population_size": 10000,
+    "vip_to_nonvip_ratio": 0.025
+  },
+  "best_iteration": 216,
+  "selected_threshold": 0.3,
+  "accuracy": 0.9477076619191184,
+  "precision": 0.18518518518518517,
+  "recall": 0.3463203463203463,
+  "f1": 0.24132730015082957,
+  "roc_auc": 0.8294244102723012,
+  "pr_auc": 0.17963575817440913,
+  "confusion_matrix": [
+    [
+      9036,
+      352
+    ],
+    [
+      151,
+      80
+    ]
+  ],
+  "train_size": 38473,
+  "test_size": 9619,
+  "subtrain_size_after_sampling": 15519,
+  "validation_size": 7695
+}

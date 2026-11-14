@@ -1,0 +1,17 @@
+feature,importance
+deposits_sum_ftd_day,17.32551210626205
+spins_count_ftd_day,12.684583840359918
+avg_transaction_check,10.696228904726853
+ftd_hour,9.02538307437334
+avg_bet_size_per_spin,6.951413659350529
+email_domain,6.591478815627388
+registration_to_ftd_hours,5.841874776681195
+ftd_day_of_month,5.734952523867394
+ftd_day_of_week,4.903069396123588
+ftd_month,4.350428688047274
+transactions_count_ftd_day,3.75980344285906
+has_install_date,3.4692882365192683
+install_to_ftd_hours,3.3192575273979794
+ftd_month_period,2.359161985466786
+failed_deposits_count,1.6133340353673853
+ftd_is_weekend,1.3742289869700253

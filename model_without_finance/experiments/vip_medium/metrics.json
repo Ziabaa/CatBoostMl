@@ -1,0 +1,61 @@
+{
+  "experiment_name": "vip_medium",
+  "config": {
+    "experiment_name": "vip_medium",
+    "auto_class_weights": null,
+    "class_weights": [
+      1,
+      10
+    ],
+    "negative_ratio": 20,
+    "iterations": 4000,
+    "depth": 4,
+    "learning_rate": 0.03,
+    "l2_leaf_reg": 10,
+    "early_stopping_rounds": 300,
+    "random_seed": 42,
+    "validation_size": 0.2,
+    "threshold_rule": "fpr",
+    "target_fpr": 0.1,
+    "population_size": 10000,
+    "vip_to_nonvip_ratio": 0.025,
+    "thresholds": [
+      0.01,
+      0.02,
+      0.03,
+      0.05,
+      0.1,
+      0.15,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9
+    ]
+  },
+  "best_iteration": 1576,
+  "selected_threshold": 0.41145579221038475,
+  "accuracy": 0.8684894479675642,
+  "precision": 0.027422303473491772,
+  "recall": 0.12987012987012986,
+  "f1": 0.045283018867924525,
+  "roc_auc": 0.5426675298852547,
+  "pr_auc": 0.030349945334631687,
+  "confusion_matrix": [
+    [
+      8324,
+      1064
+    ],
+    [
+      201,
+      30
+    ]
+  ],
+  "train_size": 38473,
+  "test_size": 9619,
+  "subtrain_size_after_sampling": 15519,
+  "validation_size": 7695
+}

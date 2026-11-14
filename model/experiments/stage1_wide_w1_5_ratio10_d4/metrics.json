@@ -1,0 +1,61 @@
+{
+  "experiment_name": "stage1_wide_w1_5_ratio10_d4",
+  "config": {
+    "experiment_name": "stage1_wide_w1_5_ratio10_d4",
+    "auto_class_weights": null,
+    "class_weights": [
+      1,
+      5
+    ],
+    "negative_ratio": 10,
+    "iterations": 4000,
+    "depth": 4,
+    "learning_rate": 0.03,
+    "l2_leaf_reg": 10,
+    "early_stopping_rounds": 300,
+    "random_seed": 42,
+    "validation_size": 0.2,
+    "threshold_rule": "fpr",
+    "target_fpr": 0.05,
+    "population_size": 10000,
+    "vip_to_nonvip_ratio": 0.025,
+    "thresholds": [
+      0.01,
+      0.02,
+      0.03,
+      0.05,
+      0.1,
+      0.15,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9
+    ]
+  },
+  "best_iteration": 239,
+  "selected_threshold": 0.7,
+  "accuracy": 0.9487472710260942,
+  "precision": 0.19248826291079812,
+  "recall": 0.354978354978355,
+  "f1": 0.2496194824961948,
+  "roc_auc": 0.8342956929450325,
+  "pr_auc": 0.188937532088204,
+  "confusion_matrix": [
+    [
+      9044,
+      344
+    ],
+    [
+      149,
+      82
+    ]
+  ],
+  "train_size": 38473,
+  "test_size": 9619,
+  "subtrain_size_after_sampling": 8129,
+  "validation_size": 7695
+}
