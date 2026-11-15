@@ -491,3 +491,83 @@ class UserRepository:
                 params={"dataset_type": int(dataset_type)},
             )
             return cast(pd.DataFrame, df)
+
+    @staticmethod
+    def get_training_dataset_top_fields(dataset_type: TrainingDatasetType) -> pd.DataFrame:
+        """Получить тренировочный датасет (использует user_training_types)."""
+        dataset_type = UserRepository._validate_dataset_type(dataset_type)
+
+        query = """
+                SELECT
+                    ff.deposits_sum_ftd_day,
+                    ff.avg_transaction_check,
+                    ff.transactions_count_ftd_day,
+                    ff.spins_count_ftd_day,
+                    ff.avg_bet_size_per_spin,
+
+                    m.email_domain,
+
+                    tf.ftd_hour,
+                    tf.registration_to_ftd_hours,
+                    tf.ftd_day_of_month,
+                    tf.ftd_day_of_week,
+                    tf.ftd_month,
+                    tf.install_to_ftd_hours,
+
+                    -- Target
+                    m.is_vip
+                FROM users_metrics AS m
+                         JOIN user_training_types AS utt ON m.id = utt.user_id
+                         LEFT JOIN user_time_features AS tf ON m.id = tf.user_metrics_id
+                         LEFT JOIN user_financial_features AS ff ON m.id = ff.user_metrics_id
+                WHERE m.is_vip IS NOT NULL
+                  AND utt.type_id = :dataset_type \
+                """
+
+        with SessionLocal() as session:
+            df = pd.read_sql_query(
+                text(query),
+                session.connection(),
+                params={"dataset_type": int(dataset_type)},
+            )
+            return cast(pd.DataFrame, df)
+
+    @staticmethod
+    def get_test_dataset_top_fields(dataset_type: TrainingDatasetType) -> pd.DataFrame:
+        """Получить тестовый датасет (использует user_test_types)."""
+        dataset_type = UserRepository._validate_dataset_type(dataset_type)
+
+        query = """
+                SELECT
+                    ff.deposits_sum_ftd_day,
+                    ff.avg_transaction_check,
+                    ff.transactions_count_ftd_day,
+                    ff.spins_count_ftd_day,
+                    ff.avg_bet_size_per_spin,
+
+                    m.email_domain,
+
+                    tf.ftd_hour,
+                    tf.registration_to_ftd_hours,
+                    tf.ftd_day_of_month,
+                    tf.ftd_day_of_week,
+                    tf.ftd_month,
+                    tf.install_to_ftd_hours,
+
+                    -- Target
+                    m.is_vip
+                FROM users_metrics AS m
+                         JOIN user_test_types AS utt ON m.id = utt.user_id
+                         LEFT JOIN user_time_features AS tf ON m.id = tf.user_metrics_id
+                         LEFT JOIN user_financial_features AS ff ON m.id = ff.user_metrics_id
+                WHERE m.is_vip IS NOT NULL
+                  AND utt.type_id = :dataset_type
+                """
+
+        with SessionLocal() as session:
+            df = pd.read_sql_query(
+                text(query),
+                session.connection(),
+                params={"dataset_type": int(dataset_type)},
+            )
+            return cast(pd.DataFrame, df)

@@ -1,0 +1,61 @@
+{
+  "experiment_name": "vip_strict",
+  "config": {
+    "experiment_name": "vip_strict",
+    "auto_class_weights": null,
+    "class_weights": [
+      1,
+      5
+    ],
+    "negative_ratio": null,
+    "iterations": 3000,
+    "depth": 6,
+    "learning_rate": 0.03,
+    "l2_leaf_reg": 5,
+    "early_stopping_rounds": 200,
+    "random_seed": 42,
+    "validation_size": 0.2,
+    "threshold_rule": "fpr",
+    "target_fpr": 0.02,
+    "vip_to_nonvip_ratio": 0.025,
+    "population_size": 10000,
+    "thresholds": [
+      0.01,
+      0.02,
+      0.03,
+      0.05,
+      0.1,
+      0.15,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9
+    ]
+  },
+  "best_iteration": 104,
+  "selected_threshold": 0.4174059402904458,
+  "accuracy": 0.9640295248986381,
+  "precision": 0.2398190045248869,
+  "recall": 0.22943722943722944,
+  "f1": 0.2345132743362832,
+  "roc_auc": 0.8267056406170168,
+  "pr_auc": 0.17527586393488312,
+  "confusion_matrix": [
+    [
+      9220,
+      168
+    ],
+    [
+      178,
+      53
+    ]
+  ],
+  "train_size": 38473,
+  "test_size": 9619,
+  "subtrain_size_after_sampling": 30778,
+  "validation_size": 7695
+}

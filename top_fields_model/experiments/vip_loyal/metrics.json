@@ -1,0 +1,61 @@
+{
+  "experiment_name": "vip_loyal",
+  "config": {
+    "experiment_name": "vip_loyal",
+    "auto_class_weights": null,
+    "class_weights": [
+      1,
+      10
+    ],
+    "negative_ratio": 20,
+    "iterations": 4000,
+    "depth": 4,
+    "learning_rate": 0.03,
+    "l2_leaf_reg": 10,
+    "early_stopping_rounds": 300,
+    "random_seed": 42,
+    "validation_size": 0.2,
+    "threshold_rule": "fpr",
+    "target_fpr": 0.28,
+    "vip_to_nonvip_ratio": 0.025,
+    "population_size": 10000,
+    "thresholds": [
+      0.01,
+      0.02,
+      0.03,
+      0.05,
+      0.1,
+      0.15,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9
+    ]
+  },
+  "best_iteration": 502,
+  "selected_threshold": 0.26078854877300534,
+  "accuracy": 0.7161867137956128,
+  "precision": 0.06387434554973823,
+  "recall": 0.7922077922077922,
+  "f1": 0.1182170542635659,
+  "roc_auc": 0.8318969412919136,
+  "pr_auc": 0.17177506640410795,
+  "confusion_matrix": [
+    [
+      6706,
+      2682
+    ],
+    [
+      48,
+      183
+    ]
+  ],
+  "train_size": 38473,
+  "test_size": 9619,
+  "subtrain_size_after_sampling": 15519,
+  "validation_size": 7695
+}
